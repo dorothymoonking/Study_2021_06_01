@@ -32,14 +32,35 @@ void main()
 		if (a_Sel == 1)
 		{
 			Student::NewStdList(&m_StdList);
+			Student::SaveStdList(&m_StdList);
 		}
 		else if (a_Sel == 2)
 		{
-			Student::PrintStdList(&m_StdList);
+			if (m_StdList.size() <= 0)
+			{
+				cout << "출력할 학생이 없습니다.";
+				cin.get();
+				system("cls");
+				continue;
+			}
+
+			int a_MenuSel = 0;
+			cout << "국어점수순(1) 영어점수순(2) 수학점수순(3) 평균순(4) 그외일반출력 : ";
+			cin >> a_MenuSel;
+			cin.get();
+			if (0 < a_MenuSel && a_MenuSel < 5)
+			{
+				Student::SortStdList(&m_StdList, a_MenuSel);
+			}
+			else
+			{
+				Student::PrintStdList(&m_StdList);
+			}
 		}
 		else if (a_Sel == 3)
 		{
 			Student::DeleteStdList(&m_StdList);
+			Student::SaveStdList(&m_StdList);
 		}
 
 		cin.get();

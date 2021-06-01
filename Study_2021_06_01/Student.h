@@ -39,13 +39,19 @@ public:
 				", ÃÑÁ¡(" << m_Total << ")" << ", Æò±Õ(" << m_Avg << ")" << endl;
 	}
 
+	static bool KorSort(const Student& a, const Student& b);
+	static bool EngSort(const Student& a, const Student& b);
+	static bool MathSort(const Student& a, const Student& b);
+	static bool AvgSort(const Student& a, const Student& b);
+
 	//----- Á¤Àû ¸â¹ö ÇÔ¼ö ¼±¾ð ºÎºÐ
 	static void CacBanJumsu(vector<Student>* a_StdList);
 	static void LoadStdList(vector<Student>* a_StdList);
 	static void SaveStdList(vector<Student>* a_StdList);
 	static void NewStdList(vector<Student>* a_StdList);
-	static void PrintStdList(vector<Student>* a_StdList);
+	static void PrintStdList(vector<Student>* a_StdList, bool DeleteMode = false);
 	static void DeleteStdList(vector<Student>* a_StdList);
+	static void SortStdList(vector<Student>* a_StdList, int a_MenuSel);
 	//-----
 };
 
