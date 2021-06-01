@@ -216,5 +216,6 @@ void Student::SortStdList(vector<Student>* a_StdList, int a_MenuSel)
 	}
 
 	PrintStdList(&a_TempList);
+	a_TempList.clear();
 }
 

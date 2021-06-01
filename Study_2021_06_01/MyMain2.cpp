@@ -59,6 +59,14 @@ void main()
 		}
 		else if (a_Sel == 3)
 		{
+			if (m_StdList.size() <= 0)
+			{
+				cout << "삭제 할 학생이 없습니다.";
+				cin.get();
+				system("cls");
+				continue;
+			}
+
 			Student::DeleteStdList(&m_StdList);
 			Student::SaveStdList(&m_StdList);
 		}
